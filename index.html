@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <style>
+      /* Fade-in animation */
+      /* .fade-in {
+         opacity: 0;
+         transform: translateY(40px);
+         transition: opacity 0.7s cubic-bezier(.4, 0, .2, 1), transform 0.7s cubic-bezier(.4, 0, .2, 1);
+         will-change: opacity, transform;
+      }
+
+      .fade-in.visible {
+         opacity: 1;
+         transform: translateY(0);
+         pointer-events: auto;
+      }
+
+      .fade-in.leaving {
+         opacity: 0;
+         transform: translateY(-40px);
+         pointer-events: none;
+      } */
+
+      /* Slide-in from left */
+      /* .slide-in-left {
+         opacity: 0;
+         transform: translateX(-80px);
+         transition: opacity 0.7s cubic-bezier(.4, 0, .2, 1), transform 0.7s cubic-bezier(.4, 0, .2, 1);
+         will-change: opacity, transform;
+      }
+
+      .slide-in-left.visible {
+         opacity: 1;
+         transform: translateX(0);
+      }
+
+      .slide-in-left.leaving {
+         opacity: 0;
+         transform: translateX(-80px);
+      } */
+
+      /* Slide-in from right */
+      .slide-in-right {
+         opacity: 0;
+         transform: translateX(80px);
+         transition: opacity 0.7s cubic-bezier(.4, 0, .2, 1), transform 0.7s cubic-bezier(.4, 0, .2, 1);
+         will-change: opacity, transform;
+      }
+
+      .slide-in-right.visible {
+         opacity: 1;
+         transform: translateX(0);
+      }
+
+      .slide-in-right.leaving {
+         opacity: 0;
+         transform: translateX(80px);
+      }
+
+      /* Preloader styles */
+      #preloader {
+         position: fixed;
+         left: 0;
+         top: 0;
+         right: 0;
+         bottom: 0;
+         background: #fff;
+         z-index: 9999;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         transition: opacity 0.5s;
+      }
+
+      .loader {
+         border: 6px solid #f3f3f3;
+         border-top: 6px solid #007bff;
+         border-radius: 50%;
+         width: 60px;
+         height: 60px;
+         animation: spin 1s linear infinite;
+      }
+
+      @keyframes spin {
+         0% {
+            transform: rotate(0deg);
+         }
+
+         100% {
+            transform: rotate(360deg);
+         }
+      }
+   </style>
+   <!-- basic -->
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <!-- mobile metas -->
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+   <!-- site metas -->
+   <title>Mubarak | Portfolio </title>
+   <meta name="keywords" content="">
+   <meta name="description" content="">
+   <meta name="author" content="">
+   <!-- bootstrap css -->
+   <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+   <!-- style css -->
+   <link rel="stylesheet" type="text/css" href="css/style.css">
+   <!-- Responsive-->
+   <link rel="stylesheet" href="css/responsive.css">
+   <!-- fevicon -->
+   <!-- Font awesome icon link -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+   <link rel="icon" href="images/fevicon.png" type="image/gif" />
+   <!-- Scrollbar Custom CSS -->
+   <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+   <!-- Tweaks for older IEs-->
+   <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+   <!-- fonts -->
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+   <!-- font awesome css -->
+   <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+</head>
+
+<body id="body">
+   <div id="preloader">
+      <div class="loader"></div>
+   </div>
+   <!-- header section start -->
+   <div class="header_section ">
+      <div class="container">
+         <nav class="navbar absolute top-0 navbar-expand-lg navbar-light bg-light" style="position: sticky;top: 0;">
+            <div class="logo"><a href="index.html"
+                  style="font-size:2rem;font-weight:bold;color:#2c3e50;text-decoration:none;"><span
+                     style="font-family:monospace;">&lt;/&gt;DevRaq</span></a></div>
+            <button class="navbar-toggler" type="button" id="button" data-toggle="collapse"
+               data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+               aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+               <ul class="navbar-nav ml-auto">
+                  <li class="nav-item">
+                     <a class="nav-link" href="index.html">Home</a>
+                     <ul class="dropdown">
+                        <li class="dropdown_list"><a href="index.html" class="dropdown_link">Home 1</a></li>
+                        <li class="dropdown_list"><a href="Home/page.html" class="dropdown_link">Home 2</a></li>
+                     </ul>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="#about">About</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link portfolio" href="#Portfolio">Portfolio</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link service" href="#Service">Service</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link blog" href="#skill">Skills</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link contact" href="#Contact">Contact Us</a>
+                  </li>
+               </ul>
+            </div>
+         </nav>
+      </div>
+      <!-- banner section start -->
+      <section class="slide-wrapper">
+         <div class="container">
+            <div class="row align-items-center">
+               <div class="col-md-6 text-center text-md-left intro-text" id="about">
+                  <h2>👋 Hey! I am</h2>
+                  <h1>Mubarak Abdulsalam</h1>
+                  <p>I'm a <span class="highlight">Frontend Developer</span> passionate about building beautiful,
+                     user-friendly web experiences. Let's create something amazing together!</p>
+                  <div class="buttons">
+                     <a href="#Portfolio" class="btn btn-primary">View Portfolio</a>
+                     <a href="#Contact" class="btn btn-outline-primary">Contact Me</a>
+                  </div>
+                  <div class="social-links">
+                     <a href="https://github.com/yourusername" target="_blank"><i class="fa fa-github"></i></a>
+                     <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fa fa-linkedin"></i></a>
+                     <a href="https://twitter.com/yourusername" target="_blank"><i class="fa fa-twitter"></i></a>
+                  </div>
+               </div>
+               <div class="col-md-6 text-center mt-4 mt-md-0">
+                  <img src="images/DevRaq.png" alt="Mubarak Abdulsalam" class="hero-img" />
+               </div>
+            </div>
+         </div>
+      </section>
+
+      <!-- banner section end -->
+   </div>
+   <!-- header section end -->
+   <!-- services section start -->
+   <div class="services_section layout_padding slide-in-right" id="Service" style="padding: 100px;">
+      <div class="container">
+         <div class="row">
+            <div class="col-sm-12">
+               <h1 class="services_taital">My <span class="portfolio_taital_1">Services</span></h1>
+            </div>
+         </div>
+      </div>
+      <div class="container">
+         <div class="services_section_2 respoService">
+            <div class="row">
+               <div class="col-lg-3 col-sm-6">
+                  <div class="box_main ">
+                     <div class="app_icon"><img src="images/icon-1.png"></div>
+                     <div class="app_icon_1"><img src="images/icon-1.png"></div>
+                     <h4 class="services_text active">App Design</h4>
+                  </div>
+               </div>
+               <div class="col-lg-3 col-sm-6">
+                  <div class="box_main ">
+                     <div class="app_icon"><img src="images/icon-2.png"></div>
+                     <div class="app_icon_1"><img src="images/icon-6.png"></div>
+                     <h4 class="services_text">Website Design</h4>
+                  </div>
+               </div>
+               <div class="col-lg-3 col-sm-6">
+                  <div class="box_main ">
+                     <div class="app_icon"><img src="images/icon-3.png"></div>
+                     <div class="app_icon_1"><img src="images/icon-7.png"></div>
+                     <h4 class="services_text">Html And Css</h4>
+                  </div>
+               </div>
+               <div class="col-lg-3 col-sm-6">
+                  <div class="box_main " style="padding: 65px;">
+                     <div class="app_icon"><img src="images/icon-4.png"></div>
+                     <div class="app_icon_1"><img src="images/icon-8.png"></div>
+                     <h4 class="services_text" style="font-size: 15.6px !important;">UI/UX Design Implementation</h4>
+                  </div>
+               </div>
+            </div>
+            <div class="readmore_bt"><a href="#">Read More</a></div>
+         </div>
+      </div>
+   </div>
+   <!-- services section end -->
+   <!-- portfolio section start -->
+   <div class="portfolio_section layout_padding " id="Portfolio">
+      <div class="container fade-in">
+         <div class="row">
+            <div class="col-12">
+               <h1 class="portfolio_taital">My <span class="portfolio_taital_1">Portfolio</span></h1>
+            </div>
+         </div>
+
+         <!-- First Row -->
+         <div class="row mb-4">
+            <div class="col-lg-7 col-md-6 col-sm-12 mb-4">
+               <div class="container_main">
+                  <img src="images/FirstProject.png" alt="Footwear Ecommerce" class="image">
+                  <div class="overlay">
+                     <div class="text">
+                        <div class="btn_main">
+                           <div class="buy_bt"><a href="#">Footwear Ecommerce</a></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-lg-5 col-md-6 col-sm-12 mb-4">
+               <div class="container_main">
+                  <img src="images/seconProject.png" alt="Calculator" class="image">
+                  <div class="overlay">
+                     <div class="text">
+                        <div class="btn_main">
+                           <div class="buy_bt"><a href="#">Calculator</a></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <!-- Second Row -->
+         <div class="row mb-4">
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-4">
+               <div class="container_main">
+                  <img src="images/Chat-AI.png" alt="Chatbot" class="image">
+                  <div class="overlay">
+                     <div class="text">
+                        <div class="btn_main">
+                           <div class="buy_bt"><a href="#">Chatbot</a></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-4">
+               <div class="container_main">
+                  <img src="images/AIModel.png" alt="AI Model" class="image">
+                  <div class="overlay">
+                     <div class="text">
+                        <div class="btn_main">
+                           <div class="buy_bt"><a href="#">AI Model</a></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12 mb-4">
+               <div class="container_main">
+                  <img src="images/Al-hirz.png" alt="Arabic School" class="image">
+                  <div class="overlay">
+                     <div class="text">
+                        <div class="btn_main">
+                           <div class="buy_bt"><a href="https://al-hirz.onrender.com/">Online Arabic School</a></div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         
+            <div class="readmore_bt"><a href="portfolio.html">See More</a></div>
+       
+      </div>
+   </div>
+
+   <!-- portfolio section end -->
+   <!-- skills section start -->
+   <div class="skills_section layout_padding slide-in-left">
+      <div class="container">
+         <div class="row" id="skill">
+            <div class="col-sm-12 text-center">
+               <h1 class="portfolio_taital mt-8">My <span class="portfolio_taital_1">Skills</span></h1>
+               <p class="skills_text">Here are some of the technologies and tools I work with:</p>
+            </div>
+         </div>
+         <div class="row" style="margin-top:32px;">
+            <div class="col-md-3 col-sm-6 mb-4">
+               <div class="skill_card text-center p-4"
+                  style="background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(44,62,80,0.07);">
+                  <i class="fab fa-html5" style="font-size:2.5rem;color:#e44d26;"></i>
+                  <h5 class="mt-3 mb-2">HTML5</h5>
+                  <p class="mb-0">Semantic, accessible markup for modern web apps.</p>
+               </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4">
+               <div class="skill_card text-center p-4"
+                  style="background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(44,62,80,0.07);">
+                  <i class="fab fa-css3-alt" style="font-size:2.5rem;color:#1572b6;"></i>
+                  <h5 class="mt-3 mb-2">CSS3</h5>
+                  <p class="mb-0">Responsive layouts, Flexbox, Grid, and animations.</p>
+               </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4">
+               <div class="skill_card text-center p-4"
+                  style="background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(44,62,80,0.07);">
+                  <i class="fab fa-js-square" style="font-size:2.5rem;color:#f7df1e;"></i>
+                  <h5 class="mt-3 mb-2">JavaScript</h5>
+                  <p class="mb-0">Dynamic, interactive web experiences and logic.</p>
+               </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4">
+               <div class="skill_card text-center p-4"
+                  style="background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(44,62,80,0.07);">
+                  <i class="fab fa-bootstrap" style="font-size:2.5rem;color:#563d7c;"></i>
+                  <h5 class="mt-3 mb-2">Bootstrap</h5>
+                  <p class="mb-0">Rapid UI development with responsive components.</p>
+               </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4">
+               <div class="skill_card text-center p-4"
+                  style="background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(44,62,80,0.07);">
+                  <i class="fab fa-react" style="font-size:2.5rem;color:#61dafb;"></i>
+                  <h5 class="mt-3 mb-2">React</h5>
+                  <p class="mb-0">Component-based UI and SPA development.</p>
+               </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4">
+               <div class="skill_card text-center p-4"
+                  style="background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(44,62,80,0.07);">
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js"
+                     style="height:2.5rem;width:2.5rem;background:#fff;border-radius:6px;object-fit:contain;" />
+                  <h5 class="mt-3 mb-2">Next.js</h5>
+                  <p class="mb-0">React framework for server-side rendering and static sites.</p>
+               </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4">
+               <div class="skill_card text-center p-4"
+                  style="background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(44,62,80,0.07);">
+                  <i class="fab fa-vuejs" style="font-size:2.5rem;color:#42b883;"></i>
+                  <h5 class="mt-3 mb-2">Vue.js</h5>
+                  <p class="mb-0">Progressive JavaScript framework for building UIs.</p>
+               </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4">
+               <div class="skill_card text-center p-4"
+                  style="background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(44,62,80,0.07);">
+                  <i class="fab fa-git-alt" style="font-size:2.5rem;color:#f34f29;"></i>
+                  <h5 class="mt-3 mb-2">Git</h5>
+                  <p class="mb-0">Version control and collaborative workflows.</p>
+               </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4">
+               <div class="skill_card text-center p-4"
+                  style="background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(44,62,80,0.07);">
+                  <i class="fab fa-figma" style="font-size:2.5rem;color:#a259ff;"></i>
+                  <h5 class="mt-3 mb-2">Figma</h5>
+                  <p class="mb-0">UI/UX design and prototyping for web projects.</p>
+               </div>
+            </div>
+            <div class="col-md-3 col-sm-6 mb-4">
+               <div class="skill_card text-center p-4"
+                  style="background:#fff;border-radius:14px;box-shadow:0 2px 12px rgba(44,62,80,0.07);">
+                  <i class="fas fa-brain" style="font-size:2.5rem;color:#2c3e50;"></i>
+                  <h5 class="mt-3 mb-2">AI & ML</h5>
+                  <p class="mb-0">Building and integrating AI-powered features.</p>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- skills section end -->
+   <!-- contact section start -->
+   <div class="contact_section layout_padding slide-in-right" id="Contact">
+      <div class="container">
+         <div class="row">
+            <div class="col-sm-12">
+               <h1 class="contact_taital">My <span class="contact_taital_1">Contact</span></h1>
+            </div>
+         </div>
+         <div class="contact_section_2">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="mail_section_1">
+                     <input type="text" class="mail_text" placeholder="Your Name" name="Your Name">
+                     <input type="text" class="mail_text" placeholder="Your Email" name="Your Email">
+                     <input type="text" class="mail_text" placeholder="Your Phone" name="Your Phone">
+                     <textarea class="massage-bt" placeholder="Your Message" rows="5" id="comment"
+                        name="Your Message"></textarea>
+                     <div class="send_bt"><a href="#">Send Now</a></div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- contact section end -->
+   <!-- project box section start -->
+   <div class="project_box fade-in">
+      <div class="container">
+         <div class="project_main">
+            <h1 class="hire_text">Hire me for your projects</h1>
+            <div class="callnow_bt"><a href="#">Call Now</a></div>
+         </div>
+      </div>
+   </div>
+   <!-- project box section end -->
+   <!-- footer section start -->
+   <div class="footer_section fade-in" style="background:#222;color:#fff;padding:40px 0 20px 0;">
+      <div class="container">
+         <div class="row">
+            <div class="col-md-4">
+               <h4 style="color:#fff;">About Me</h4>
+               <p>I'm Mubarak, a passionate developer specializing in web and AI projects. I love building modern,
+                  user-friendly applications and learning new technologies.</p>
+            </div>
+            <div class="col-md-4">
+               <h4 style="color:#fff;">Contact</h4>
+               <ul style="list-style:none;padding:0;">
+                  <li><i class="fa fa-map-marker"></i> Ibadan, Nigeria</li>
+                  <li><i class="fa fa-phone"></i> +2348059330346</li>
+                  <li><i class="fa fa-envelope"></i> almubaraktech2@gmail.com</li>
+               </ul>
+            </div>
+            <div class="col-md-4">
+               <h4 style="color:#fff;">Follow Me</h4>
+               <a href="https://github.com/yourusername" style="color:#fff;margin-right:10px;"><i
+                     class="fa fa-github"></i></a>
+               <a href="https://linkedin.com/in/yourusername" style="color:#fff;margin-right:10px;"><i
+                     class="fa fa-linkedin"></i></a>
+               <a href="https://twitter.com/yourusername" style="color:#fff;"><i class="fa fa-twitter"></i></a>
+            </div>
+         </div>
+      </div>
+   </div>
+   <!-- footer section end -->
+   <!-- copyright section start -->
+   <div class="copyright_section fade-in">
+      <div class="container">
+         <p class="copyright_text">2025 All Rights Reserved. Design by <a
+               href="https://www.linkedin.com/in/mubarak-abdulsalam-4943a0344">Mubarak</a> </p>
+      </div>
+   </div>
+   <!-- copyright section end -->
+   <!-- Javascript files-->
+   <script src="js/jquery.min.js"></script>
+   <script src="js/popper.min.js"></script>
+   <script src="js/bootstrap.bundle.min.js"></script>
+   <script src="js/jquery-3.0.0.min.js"></script>
+   <script src="js/plugin.js"></script>
+   <!-- sidebar -->
+   <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+   <script src="js/custom.js"></script>
+   <script>
+      // Preloader
+      window.addEventListener('load', function () {
+         var preloader = document.getElementById('preloader');
+         preloader.style.opacity = '0';
+         setTimeout(function () { preloader.style.display = 'none'; }, 500);
+      });
+
+      // Fade-in/fade-out and slide-in on scroll direction (reversed)
+      let lastScrollY = window.scrollY;
+      function revealOnScroll() {
+         var fadeElements = document.querySelectorAll('.fade-in');
+         var leftElements = document.querySelectorAll('.slide-in-left');
+         var rightElements = document.querySelectorAll('.slide-in-right');
+         var windowHeight = window.innerHeight;
+         var currentScrollY = window.scrollY;
+         var scrollingDown = currentScrollY > lastScrollY;
+         // Fade-in sections
+         fadeElements.forEach(function (el) {
+            var position = el.getBoundingClientRect().top;
+            if (position < windowHeight - 60 && scrollingDown) {
+               el.classList.add('visible');
+               el.classList.remove('leaving');
+            } else if (!scrollingDown && position < windowHeight && position > 60) {
+               el.classList.remove('visible');
+               el.classList.add('leaving');
+            } else if (position > windowHeight - 60) {
+               el.classList.remove('visible');
+               el.classList.remove('leaving');
+            }
+         });
+         // Slide-in left sections
+         leftElements.forEach(function (el) {
+            var position = el.getBoundingClientRect().top;
+            if (position < windowHeight - 60 && scrollingDown) {
+               el.classList.add('visible');
+               el.classList.remove('leaving');
+            } else if (!scrollingDown && position < windowHeight && position > 60) {
+               el.classList.remove('visible');
+               el.classList.add('leaving');
+            } else if (position > windowHeight - 60) {
+               el.classList.remove('visible');
+               el.classList.remove('leaving');
+            }
+         });
+         // Slide-in right sections
+         rightElements.forEach(function (el) {
+            var position = el.getBoundingClientRect().top;
+            if (position < windowHeight - 60 && scrollingDown) {
+               el.classList.add('visible');
+               el.classList.remove('leaving');
+            } else if (!scrollingDown && position < windowHeight && position > 60) {
+               el.classList.remove('visible');
+               el.classList.add('leaving');
+            } else if (position > windowHeight - 60) {
+               el.classList.remove('visible');
+               el.classList.remove('leaving');
+            }
+         });
+         lastScrollY = currentScrollY;
+      }
+      window.addEventListener('scroll', revealOnScroll);
+      window.addEventListener('DOMContentLoaded', revealOnScroll);
+   </script>
+   <script>
+      $('#myCarousel').carousel({
+         interval: false
+      });
+
+      //scroll slides on swipe for touch enabled devices
+
+      $("#myCarousel").on("touchstart", function (event) {
+
+         var yClick = event.originalEvent.touches[0].pageY;
+         $(this).one("touchmove", function (event) {
+
+            var yMove = event.originalEvent.touches[0].pageY;
+            if (Math.floor(yClick - yMove) > 1) {
+               $(".carousel").carousel('next');
+            }
+            else if (Math.floor(yClick - yMove) < -1) {
+               $(".carousel").carousel('prev');
+            }
+         });
+         $(".carousel").on("touchend", function () {
+            $(this).off("touchmove");
+         });
+      });
+   </script>
+</body>
+
+</html>
