@@ -536,9 +536,12 @@ button {
 }
 
 .image {
-    display: block;
+    /* display: block;
     width: 100%;
-    height: auto;
+    height: auto; */
+}
+.hero-img{
+    width: 900% !;
 }
 
 
