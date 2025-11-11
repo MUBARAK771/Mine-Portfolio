@@ -213,6 +213,9 @@
     .video_bt {
         padding-top: 30px;
     }
+    body{
+        overflow-x: hidden;
+    }
     .services_section {
         padding-top: 90px;
     }
@@ -245,7 +248,9 @@
 }
 
 @media (min-width: 576px) and (max-width: 767px) {
-    
+    body{
+        overflow-x: hidden !important;
+    }
     .logo {
         width: auto;
     }
@@ -342,6 +347,9 @@
 }
 
 @media (max-width: 575px) {
+    body{
+        overflow-x: hidden;
+    }
     .logo {
         width: auto;
     }
@@ -494,6 +502,9 @@ body.off{
 
 /* Responsive Design */
 @media (max-width: 767.98px) {
+    body{
+        overflow-x: hidden;
+    }
   .slide-wrapper {
     padding: 40px 15px;
     text-align: center;
@@ -629,4 +640,7 @@ body.off{
     font-size: 1rem;
     padding: 10px 24px;
   }
+}
+body{
+    overflow-x: hidden !important;
 }
