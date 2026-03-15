@@ -238,7 +238,7 @@ body {
 
 .nav-link:hover,
 .nav-link.active {
-   color: var(--text-primary);
+   /* color: var(--text-primary); */
 }
 
 .nav-link::after {
