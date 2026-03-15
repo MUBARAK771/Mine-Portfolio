@@ -4,368 +4,557 @@
 <head>
    <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1">
-   <title>Mubarak | Portfolio</title>
-   <meta name="description" content="Mubarak Abdulsalam - Frontend Developer Portfolio">
+   <title>Mubarak | Frontend Developer</title>
+   <meta name="description"
+      content="Mubarak Abdulsalam - Frontend Developer crafting beautiful, user-friendly web experiences.">
    <meta name="author" content="Mubarak Abdulsalam">
 
    <!-- Font Awesome -->
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 
    <!-- Google Fonts -->
-   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Fira+Code:wght@400;500&display=swap"
+      rel="stylesheet">
+      <link rel="icon" href="/images/IMG-20250924-WA0040-removebg-preview.png">
 
    <!-- Custom CSS -->
    <link rel="stylesheet" href="style.css">
 </head>
 
 <body id="body">
+
+   <!-- Preloader -->
    <div id="preloader">
-      <div class="loader"></div>
+      <div class="preloader-inner">
+         <div class="loader-ring"></div>
+         <span class="loader-text">DevRaq</span>
+      </div>
    </div>
 
-   <!-- header section start -->
-   <div class="header_section">
-      <div class="container heade">
-         <nav class="navbar">
-            <div class="nav-container">
-               <div class="logo">
-                  <a href="index.html">&lt;/&gt;DevRaq</a>
-               </div>
-               <ul class="nav-menu">
-                  <li class="nav-item">
-                     <a class="nav-link" href="index.html">Home</a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link" href="#about">About</a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link portfolio" href="#Portfolio">Portfolio</a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link service" href="#Service">Service</a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link blog" href="#skill">Skills</a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link contact" href="#Contact">Contact Us</a>
-                  </li>
-               </ul>
-               <button class="hamburger">
-                  <i class="fas fa-bars"></i>
-               </button>
-            </div>
-         </nav>
-      </div>
+   <!-- Scroll progress bar -->
+   <div id="scroll-progress"></div>
 
-      <!-- banner section start -->
-      <section class="slide-wrapper">
-         <div class="container">
-            <div class="row align-items-center">
-               <div class="col-md-6 intro-text" id="about">
-                  <h2> Hey! I am</h2>
-                  <h1>Mubarak Abdulsalam</h1>
-                  <p>I'm a <span class="highlight">Frontend Developer</span> passionate about building beautiful,
-                     user-friendly web experiences. Let's create something amazing together!</p>
-                  <div class="buttons">
-                     <a href="#Portfolio" class="btn btn-primary">View Portfolio</a>
-                     <a href="#Contact" class="btn btn-outline-primary">Contact Me</a>
-                  </div>
-                  <div class="social-links">
-                     <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
-                     <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i></a>
-                     <a href="https://twitter.com/yourusername" target="_blank"><i class="fab fa-twitter"></i></a>
-                  </div>
-               </div>
-               <div class="col-md-6 text-center">
-                  <img src="images/IMG-20250924-WA0040.jpg" alt="Mubarak Abdulsalam" class="hero-img" />
-               </div>
+   <!-- Scroll to top button -->
+   <button id="scroll-top" aria-label="Scroll to top">
+      <i class="fas fa-arrow-up"></i>
+   </button>
+
+   <!-- ===== NAVIGATION ===== -->
+   <nav class="navbar" id="navbar">
+      <div class="nav-container">
+         <a href="index.html" class="logo">
+            <span class="logo-bracket">&lt;/&gt;</span>
+            <span class="logo-name">DevRaq</span>
+         </a>
+         <ul class="nav-menu" id="nav-menu">
+            <li class="nav-item"><a class="nav-link" href="#hero">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+            <li class="nav-item"><a class="nav-link contact-link" href="#contact">Contact</a></li>
+         </ul>
+         <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+         </button>
+      </div>
+   </nav>
+
+   <!-- ===== HERO SECTION ===== -->
+   <section class="hero" id="hero">
+      <canvas id="particles-canvas"></canvas>
+
+      <!-- Animated background blobs -->
+      <div class="blob blob-1"></div>
+      <div class="blob blob-2"></div>
+      <div class="blob blob-3"></div>
+
+      <div class="container hero-container">
+         <div class="hero-text">
+            <p class="hero-greeting">👋 Hello, World! I am</p>
+            <h1 class="hero-name">Mubarak<br><span class="gradient-text">Abdulsalam</span></h1>
+            <div class="hero-role">
+               <span class="role-prefix">I'm a </span>
+               <span class="typed-text" id="typed"></span>
+               <span class="typed-cursor">|</span>
+            </div>
+            <p class="hero-desc">Passionate about building beautiful, user-friendly web experiences that leave a lasting
+               impression. Let's create something amazing together!</p>
+            <div class="hero-actions">
+               <a href="#portfolio" class="btn btn-primary">
+                  <i class="fas fa-eye"></i> View Work
+               </a>
+               <a href="#contact" class="btn btn-ghost">
+                  <i class="fas fa-paper-plane"></i> Hire Me
+               </a>
+            </div>
+            <div class="hero-socials">
+               <a href="https://github.com/Mubarak771" target="_blank" aria-label="GitHub"><i
+                     class="fab fa-github"></i></a>
+               <a href="https://linkedin.com/in/mubarak-abdulsalam-4943a0344" target="_blank" aria-label="LinkedIn"><i
+                     class="fab fa-linkedin-in"></i></a>
+               <a href="mailto:mubarakabdulsalam02@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
             </div>
          </div>
-      </section>
-      <!-- banner section end -->
-   </div>
-   <!-- header section end -->
+         <div class="hero-image-wrap">
+            <div class="hero-img-glow"></div>
+            <img src="images/IMG-20250924-WA0040-removebg-preview.png" alt="Mubarak Abdulsalam" class="hero-img">
+            <div class="hero-badge badge-1"><i class="fab fa-react"></i> React</div>
+            <div class="hero-badge badge-2"><i class="fab fa-js"></i> JavaScript</div>
+            <div class="hero-badge badge-3"><i class="fas fa-layer-group"></i> Next.js</div>
+         </div>
+      </div>
 
-   <!-- services section start -->
-   <div class="services_section layout_padding slide-in-right" id="Service">
+      <div class="hero-scroll-hint">
+         <span>Scroll Down</span>
+         <div class="scroll-dot"></div>
+      </div>
+   </section>
+
+   <!-- ===== ABOUT SECTION ===== -->
+   <section class="about-section" id="about">
       <div class="container">
-         <div class="row">
-            <div class="col-12">
-               <h1 class="services_taital">My <span class="portfolio_taital_1">Services</span></h1>
+         <div class="section-header reveal">
+            <span class="section-tag">About Me</span>
+            <h2 class="section-title">Who I <span class="gradient-text">Am</span></h2>
+         </div>
+         <div class="about-grid">
+            <div class="about-text reveal">
+               <p>I'm <strong>Mubarak Abdulsalam</strong>, a passionate Frontend Developer based in Ibadan, Nigeria. I
+                  specialize in transforming ideas into stunning, performant web experiences using modern technologies
+                  and design principles.</p>
+               <p>With expertise spanning from pixel-perfect HTML/CSS to complex React & Next.js applications, I bring
+                  both technical precision and creative vision to every project I take on.</p>
+               <div class="about-actions">
+                  <a href="#portfolio" class="btn btn-primary btn-sm">View Projects <i
+                        class="fas fa-arrow-right"></i></a>
+               </div>
+            </div>
+            <div class="about-stats reveal">
+               <div class="stat-card">
+                  <div class="stat-number" data-target="15">0</div>
+                  <div class="stat-label">Projects Built</div>
+               </div>
+               <div class="stat-card">
+                  <div class="stat-number" data-target="2">0</div>
+                  <div class="stat-label">Years Experience</div>
+               </div>
+               <div class="stat-card">
+                  <div class="stat-number" data-target="100">0</div>
+                  <div class="stat-label">% Commitment</div>
+               </div>
+               <div class="stat-card">
+                  <div class="stat-number" data-target="9">0</div>
+                  <div class="stat-label">Technologies</div>
+               </div>
             </div>
          </div>
       </div>
+   </section>
+
+   <!-- ===== SERVICES SECTION ===== -->
+   <section class="services-section" id="services">
       <div class="container">
-         <div class="services_section_2">
-            <div class="row">
-               <div class="col-lg-3 col-sm-6">
-                  <div class="box_main">
-                     <div class="app_icon"><img src="images/icon-1.png" alt="App Design"></div>
-                     <h4 class="services_text">App Design</h4>
-                  </div>
+         <div class="section-header reveal">
+            <span class="section-tag">What I Do</span>
+            <h2 class="section-title">My <span class="gradient-text">Services</span></h2>
+         </div>
+         <div class="services-grid">
+            <div class="service-card reveal">
+               <div class="service-icon">
+                  <i class="fas fa-mobile-alt"></i>
                </div>
-               <div class="col-lg-3 col-sm-6">
-                  <div class="box_main">
-                     <div class="app_icon"><img src="images/icon-2.png" alt="Website Design"></div>
-                     <h4 class="services_text">Website Design</h4>
-                  </div>
-               </div>
-               <div class="col-lg-3 col-sm-6">
-                  <div class="box_main">
-                     <div class="app_icon"><img src="images/icon-3.png" alt="HTML and CSS"></div>
-                     <h4 class="services_text">HTML And CSS</h4>
-                  </div>
-               </div>
-               <div class="col-lg-3 col-sm-6">
-                  <div class="box_main">
-                     <div class="app_icon"><img src="images/icon-4.png" alt="UI/UX Design"></div>
-                     <h4 class="services_text">UI/UX Design Implementation</h4>
-                  </div>
-               </div>
+               <h3>App Design</h3>
+               <p>Crafting intuitive mobile-first interfaces that delight users and drive engagement across all screen
+                  sizes.</p>
+               <div class="service-arrow"><i class="fas fa-arrow-right"></i></div>
             </div>
-            <div class="readmore_bt"><a href="#">Read More</a></div>
+            <div class="service-card reveal">
+               <div class="service-icon">
+                  <i class="fas fa-globe"></i>
+               </div>
+               <h3>Website Design</h3>
+               <p>Building visually stunning, conversion-optimized websites with clean code and modern design
+                  principles.</p>
+               <div class="service-arrow"><i class="fas fa-arrow-right"></i></div>
+            </div>
+            <div class="service-card reveal">
+               <div class="service-icon">
+                  <i class="fas fa-code"></i>
+               </div>
+               <h3>Frontend Development</h3>
+               <p>Writing semantic, accessible, and performant HTML, CSS, and JavaScript for all modern browsers.</p>
+               <div class="service-arrow"><i class="fas fa-arrow-right"></i></div>
+            </div>
+            <div class="service-card reveal">
+               <div class="service-icon">
+                  <i class="fas fa-paint-brush"></i>
+               </div>
+               <h3>UI/UX Implementation</h3>
+               <p>Translating Figma designs into pixel-perfect, interactive web experiences with smooth animations.</p>
+               <div class="service-arrow"><i class="fas fa-arrow-right"></i></div>
+            </div>
          </div>
       </div>
-   </div>
-   <!-- services section end -->
+   </section>
 
-   <!-- portfolio section start -->
-   <div class="portfolio_section layout_padding" id="Portfolio">
-      <div class="container fade-in">
-         <div class="row">
-            <div class="col-12">
-               <h1 class="portfolio_taital">My <span class="portfolio_taital_1">Portfolio</span></h1>
-            </div>
-         </div>
-
-         <!-- First Row -->
-         <div class="row">
-            <div class="col-lg-7 col-md-6 col-sm-12">
-               <div class="container_main">
-                  <img src="images/FirstProject.png" alt="Footwear Ecommerce" class="image">
-                  <div class="overlay">
-                     <div class="text">
-                        <div class="btn_main">
-                           <div class="buy_bt"><a href="foot-wear-ecomerce.vercel.app">Footwear Ecommerce</a></div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="col-lg-5 col-md-6 col-sm-12">
-               <div class="container_main">
-                  <img src="images/seconProject.png" alt="Calculator" class="image">
-                  <div class="overlay">
-                     <div class="text">
-                        <div class="btn_main">
-                           <div class="buy_bt"><a href="#">Calculator</a></div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-
-         <!-- Second Row -->
-         <div class="row">
-            <div class="col-lg-7 col-md-6 col-sm-12">
-               <div class="container_main">
-                  <img src="images/AIModel.png" alt="Footwear Ecommerce" class="image">
-                  <div class="overlay">
-                     <div class="text">
-                        <div class="btn_main">
-                           <div class="buy_bt"><a href="foot-wear-ecomerce.vercel.app">AI Model </a></div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="col-lg-5 col-md-6 col-sm-12">
-               <div class="container_main">
-                  <img src="images/Chat-AI.png" alt="Calculator" class="image">
-                  <div class="overlay">
-                     <div class="text">
-                        <div class="btn_main">
-                           <div class="buy_bt"><a href="#">Chat</a></div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-
-            <div class="col-lg-4 col-md-4 col-sm-6 col-12">
-               <div class="container_main">
-                  <img src="images/Al-hirz.png" alt="Arabic School" class="image">
-                  <div class="overlay">
-                     <div class="text">
-                        <div class="btn_main">
-                           <div class="buy_bt"><a href="https://al-hirz.onrender.com/">Online Arabic School</a></div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </div>
-
-         <div class="readmore_bt"><a href="portfolio.html">See More</a></div>
-      </div>
-   </div>
-   <!-- portfolio section end -->
-
-   <!-- skills section start -->
-   <div class="skills_section layout_padding slide-in-left">
+   <!-- ===== PORTFOLIO SECTION ===== -->
+   <section class="portfolio-section" id="portfolio">
       <div class="container">
-         <div class="row" id="skill">
-            <div class="col-12 text-center">
-               <h1 class="portfolio_taital mt-8">My <span class="portfolio_taital_1">Skills</span></h1>
-               <p class="skills_text">Here are some of the technologies and tools I work with:</p>
+         <div class="section-header reveal">
+            <span class="section-tag">My Work</span>
+            <h2 class="section-title">Featured <span class="gradient-text">Projects</span></h2>
+         </div>
+
+         <div class="projects-grid">
+            <!-- Project 1 -->
+            <div class="project-card project-large reveal">
+               <div class="project-img-wrap">
+                  <img src="images/FirstProject.png" alt="Footwear Ecommerce" class="project-img">
+                  <div class="project-overlay">
+                     <a href="https://foot-wear-ecomerce.vercel.app" target="_blank" class="project-link">
+                        <i class="fas fa-external-link-alt"></i> Live Demo
+                     </a>
+                  </div>
+               </div>
+               <div class="project-info">
+                  <div class="project-tags">
+                     <span class="tag">React</span>
+                     <span class="tag">CSS</span>
+                     <span class="tag">E-commerce</span>
+                  </div>
+                  <h3>Footwear Ecommerce</h3>
+                  <p>A modern footwear store with cart functionality, product filtering, and responsive design.</p>
+               </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card reveal">
+               <div class="project-img-wrap">
+                  <img src="images/Chat-AI.png" alt="Chat AI" class="project-img">
+                  <div class="project-overlay">
+                     <a href="#" class="project-link">
+                        <i class="fas fa-external-link-alt"></i> Live Demo
+                     </a>
+                  </div>
+               </div>
+               <div class="project-info">
+                  <div class="project-tags">
+                     <span class="tag">JavaScript</span>
+                     <span class="tag">AI</span>
+                  </div>
+                  <h3>Chat AI</h3>
+                  <p>An intelligent chat interface powered by AI for natural conversations.</p>
+               </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card reveal">
+               <div class="project-img-wrap">
+                  <img src="images/AIModel.png" alt="AI Model" class="project-img">
+                  <div class="project-overlay">
+                     <a href="#" class="project-link">
+                        <i class="fas fa-external-link-alt"></i> Live Demo
+                     </a>
+                  </div>
+               </div>
+               <div class="project-info">
+                  <div class="project-tags">
+                     <span class="tag">Next.js</span>
+                     <span class="tag">API</span>
+                  </div>
+                  <h3>AI Model Dashboard</h3>
+                  <p>A feature-rich dashboard for managing and visualizing AI model outputs.</p>
+               </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project-card project-large reveal">
+               <div class="project-img-wrap">
+                  <img src="images/Al-hirz.png" alt="Online Arabic School" class="project-img">
+                  <div class="project-overlay">
+                     <a href="https://al-hirz.onrender.com/" target="_blank" class="project-link">
+                        <i class="fas fa-external-link-alt"></i> Live Demo
+                     </a>
+                  </div>
+               </div>
+               <div class="project-info">
+                  <div class="project-tags">
+                     <span class="tag">HTML/CSS</span>
+                     <span class="tag">JavaScript</span>
+                     <span class="tag">Education</span>
+                  </div>
+                  <h3>Online Arabic School</h3>
+                  <p>A comprehensive online platform for Arabic language education with structured courses.</p>
+               </div>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="project-card reveal">
+               <div class="project-img-wrap">
+                  <img src="images/seconProject.png" alt="Calculator" class="project-img">
+                  <div class="project-overlay">
+                     <a href="#" class="project-link">
+                        <i class="fas fa-external-link-alt"></i> Live Demo
+                     </a>
+                  </div>
+               </div>
+               <div class="project-info">
+                  <div class="project-tags">
+                     <span class="tag">JavaScript</span>
+                     <span class="tag">CSS Grid</span>
+                  </div>
+                  <h3>Smart Calculator</h3>
+                  <p>A sleek calculator with scientific functions and keyboard support.</p>
+               </div>
             </div>
          </div>
-         <div class="row">
-            <div class="col-md-3 col-sm-6">
-               <div class="skill_card">
-                  <i class="fab fa-html5" style="font-size:2.5rem;color:#e44d26;"></i>
-                  <h5>HTML5</h5>
-                  <p>Semantic, accessible markup for modern web apps.</p>
+
+         <div class="portfolio-cta reveal">
+            <a href="portfolio.html" class="btn btn-outline">
+               <i class="fas fa-folder-open"></i> View All Projects
+            </a>
+         </div>
+      </div>
+   </section>
+
+   <!-- ===== SKILLS SECTION ===== -->
+   <section class="skills-section" id="skills">
+      <div class="container">
+         <div class="section-header reveal">
+            <span class="section-tag">My Arsenal</span>
+            <h2 class="section-title">Tech <span class="gradient-text">Stack</span></h2>
+         </div>
+         <div class="skills-grid">
+            <div class="skill-card reveal">
+               <div class="skill-icon-wrap">
+                  <i class="fab fa-html5" style="color:#e44d26;"></i>
+               </div>
+               <h4>HTML5</h4>
+               <p>Semantic, accessible markup</p>
+               <div class="skill-bar">
+                  <div class="skill-fill" data-width="95"></div>
                </div>
             </div>
-            <div class="col-md-3 col-sm-6">
-               <div class="skill_card">
-                  <i class="fab fa-css3-alt" style="font-size:2.5rem;color:#1572b6;"></i>
-                  <h5>CSS3</h5>
-                  <p>Responsive layouts, Flexbox, Grid, and animations.</p>
+            <div class="skill-card reveal">
+               <div class="skill-icon-wrap">
+                  <i class="fab fa-css3-alt" style="color:#1572b6;"></i>
+               </div>
+               <h4>CSS3</h4>
+               <p>Flexbox, Grid, Animations</p>
+               <div class="skill-bar">
+                  <div class="skill-fill" data-width="90"></div>
                </div>
             </div>
-            <div class="col-md-3 col-sm-6">
-               <div class="skill_card">
-                  <i class="fab fa-js-square" style="font-size:2.5rem;color:#f7df1e;"></i>
-                  <h5>JavaScript</h5>
-                  <p>Dynamic, interactive web experiences and logic.</p>
+            <div class="skill-card reveal">
+               <div class="skill-icon-wrap">
+                  <i class="fab fa-js-square" style="color:#f7df1e;"></i>
+               </div>
+               <h4>JavaScript</h4>
+               <p>Dynamic, interactive logic</p>
+               <div class="skill-bar">
+                  <div class="skill-fill" data-width="85"></div>
                </div>
             </div>
-            <div class="col-md-3 col-sm-6">
-               <div class="skill_card">
-                  <i class="fab fa-bootstrap" style="font-size:2.5rem;color:#563d7c;"></i>
-                  <h5>Bootstrap</h5>
-                  <p>Rapid UI development with responsive components.</p>
+            <div class="skill-card reveal">
+               <div class="skill-icon-wrap">
+                  <i class="fab fa-react" style="color:#61dafb;"></i>
+               </div>
+               <h4>React</h4>
+               <p>Component-based UI & SPA</p>
+               <div class="skill-bar">
+                  <div class="skill-fill" data-width="80"></div>
                </div>
             </div>
-            <div class="col-md-3 col-sm-6">
-               <div class="skill_card">
-                  <i class="fab fa-react" style="font-size:2.5rem;color:#61dafb;"></i>
-                  <h5>React</h5>
-                  <p>Component-based UI and SPA development.</p>
-               </div>
-            </div>
-            <div class="col-md-3 col-sm-6">
-               <div class="skill_card">
+            <div class="skill-card reveal">
+               <div class="skill-icon-wrap">
                   <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" alt="Next.js"
-                     style="height:2.5rem;width:2.5rem;background:#fff;border-radius:6px;object-fit:contain;" />
-                  <h5>Next.js</h5>
-                  <p>React framework for server-side rendering and static sites.</p>
+                     style="height:2rem;width:2rem;border-radius:4px;background:#fff;">
+               </div>
+               <h4>Next.js</h4>
+               <p>SSR & Static sites</p>
+               <div class="skill-bar">
+                  <div class="skill-fill" data-width="75"></div>
                </div>
             </div>
-            <div class="col-md-3 col-sm-6">
-               <div class="skill_card">
-                  <i class="fab fa-vuejs" style="font-size:2.5rem;color:#42b883;"></i>
-                  <h5>Vue.js</h5>
-                  <p>Progressive JavaScript framework for building UIs.</p>
+            <div class="skill-card reveal">
+               <div class="skill-icon-wrap">
+                  <i class="fab fa-vuejs" style="color:#42b883;"></i>
+               </div>
+               <h4>Vue.js</h4>
+               <p>Progressive JS framework</p>
+               <div class="skill-bar">
+                  <div class="skill-fill" data-width="65"></div>
                </div>
             </div>
-            <div class="col-md-3 col-sm-6">
-               <div class="skill_card">
-                  <i class="fab fa-git-alt" style="font-size:2.5rem;color:#f34f29;"></i>
-                  <h5>Git</h5>
-                  <p>Version control and collaborative workflows.</p>
+            <div class="skill-card reveal">
+               <div class="skill-icon-wrap">
+                  <i class="fab fa-bootstrap" style="color:#7952b3;"></i>
+               </div>
+               <h4>Bootstrap</h4>
+               <p>Rapid UI development</p>
+               <div class="skill-bar">
+                  <div class="skill-fill" data-width="88"></div>
                </div>
             </div>
-            <div class="col-md-3 col-sm-6">
-               <div class="skill_card">
-                  <i class="fab fa-figma" style="font-size:2.5rem;color:#a259ff;"></i>
-                  <h5>Figma</h5>
-                  <p>UI/UX design and prototyping for web projects.</p>
+            <div class="skill-card reveal">
+               <div class="skill-icon-wrap">
+                  <i class="fab fa-git-alt" style="color:#f34f29;"></i>
+               </div>
+               <h4>Git</h4>
+               <p>Version control workflows</p>
+               <div class="skill-bar">
+                  <div class="skill-fill" data-width="80"></div>
+               </div>
+            </div>
+            <div class="skill-card reveal">
+               <div class="skill-icon-wrap">
+                  <i class="fab fa-figma" style="color:#a259ff;"></i>
+               </div>
+               <h4>Figma</h4>
+               <p>UI/UX Design & Prototyping</p>
+               <div class="skill-bar">
+                  <div class="skill-fill" data-width="70"></div>
                </div>
             </div>
          </div>
       </div>
-   </div>
-   <!-- skills section end -->
+   </section>
 
-   <!-- contact section start -->
-   <div class="contact_section layout_padding slide-in-right" id="Contact">
-      <div class="container">
-         <div class="row">
-            <div class="col-12">
-               <h1 class="contact_taital">My <span class="contact_taital_1">Contact</span></h1>
-            </div>
+   <!-- ===== HIRE ME BANNER ===== -->
+   <section class="hire-banner">
+      <div class="hire-glow"></div>
+      <div class="container hire-container reveal">
+         <div class="hire-text">
+            <h2>Ready to build something <span class="gradient-text">extraordinary?</span></h2>
+            <p>Let's turn your vision into a stunning reality. Available for freelance projects.</p>
          </div>
-         <div class="contact_section_2">
-            <div class="row">
-               <div class="col-12">
-                  <div class="mail_section_1">
-                     <input type="text" class="mail_text" placeholder="Your Name" name="Your Name">
-                     <input type="text" class="mail_text" placeholder="Your Email" name="Your Email">
-                     <input type="text" class="mail_text" placeholder="Your Phone" name="Your Phone">
-                     <textarea class="massage-bt" placeholder="Your Message" rows="5" id="comment"
-                        name="Your Message"></textarea>
-                     <div class="send_bt"><a href="#">Send Now</a></div>
+         <div class="hire-actions">
+            <a href="#contact" class="btn btn-primary">
+               <i class="fas fa-rocket"></i> Let's Work Together
+            </a>
+            <a href="tel:+2349054803670" class="btn btn-ghost">
+               <i class="fas fa-phone"></i> Call Now
+            </a>
+         </div>
+      </div>
+   </section>
+
+   <!-- ===== CONTACT SECTION ===== -->
+   <section class="contact-section" id="contact">
+      <div class="container">
+         <div class="section-header reveal">
+            <span class="section-tag">Get In Touch</span>
+            <h2 class="section-title">Contact <span class="gradient-text">Me</span></h2>
+         </div>
+         <div class="contact-grid">
+            <div class="contact-info reveal">
+               <h3>Let's Talk</h3>
+               <p>Have a project in mind? Let's discuss how I can help bring your ideas to life.</p>
+               <div class="contact-items">
+                  <div class="contact-item">
+                     <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                     <div>
+                        <strong>Location</strong>
+                        <span>Ibadan, Nigeria</span>
+                     </div>
+                  </div>
+                  <div class="contact-item">
+                     <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                     <div>
+                        <strong>Phone</strong>
+                        <span>+2349054803670</span>
+                     </div>
+                  </div>
+                  <div class="contact-item">
+                     <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                     <div>
+                        <strong>Email</strong>
+                        <span>mubarakabdulsalam02@gmail.com</span>
+                     </div>
                   </div>
                </div>
+               <div class="contact-socials">
+                  <a href="https://github.com/Mubarak771" target="_blank"><i class="fab fa-github"></i></a>
+                  <a href="https://linkedin.com/in/mubarak-abdulsalam-4943a0344" target="_blank"><i
+                        class="fab fa-linkedin-in"></i></a>
+                  <a href="mailto:mubarakabdulsalam02@gmail.com"><i class="fas fa-envelope"></i></a>
+               </div>
+            </div>
+            <div class="contact-form reveal">
+               <form id="contact-form">
+                  <div class="form-group">
+                     <label for="name">Full Name</label>
+                     <input type="text" id="name" placeholder="Mubarak Abdulsalam" required>
+                  </div>
+                  <div class="form-group">
+                     <label for="email">Email Address</label>
+                     <input type="email" id="email" placeholder="hello@example.com" required>
+                  </div>
+                  <div class="form-group">
+                     <label for="subject">Subject</label>
+                     <input type="text" id="subject" placeholder="Project Inquiry">
+                  </div>
+                  <div class="form-group">
+                     <label for="message">Message</label>
+                     <textarea id="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary btn-full">
+                     <i class="fas fa-paper-plane"></i> Send Message
+                  </button>
+               </form>
             </div>
          </div>
       </div>
-   </div>
-   <!-- contact section end -->
+   </section>
 
-   <!-- project box section start -->
-   <div class="project_box fade-in">
-      <div class="container">
-         <div class="project_main">
-            <h1 class="hire_text">Hire me for your projects</h1>
-            <div class="callnow_bt"><a href="#">Call Now</a></div>
-         </div>
-      </div>
-   </div>
-   <!-- project box section end -->
-
-   <!-- footer section start -->
-   <div class="footer_section fade-in">
-      <div class="container">
-         <div class="row">
-            <div class="col-md-4">
-               <h4>About Me</h4>
-               <p>I'm Mubarak, a passionate developer specializing in web and AI projects. I love building modern,
-                  user-friendly applications and learning new technologies.</p>
-            </div>
-            <div class="col-md-4">
-               <h4>Contact</h4>
-               <ul>
-                  <li><i class="fa fa-map-marker"></i> Ibadan, Nigeria</li>
-                  <li><i class="fa fa-phone"></i> +2349054803670</li>
-                  <li><i class="fa fa-envelope"></i> mubarakabdulsalam02@gmail.com</li>
-               </ul>
-            </div>
-            <div class="col-md-4">
-               <h4>Follow Me</h4>
-               <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
-               <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i></a>
-               <a href="https://twitter.com/yourusername" target="_blank"><i class="fab fa-twitter"></i></a>
+   <!-- ===== FOOTER ===== -->
+   <footer class="footer">
+      <div class="container footer-container">
+         <div class="footer-brand">
+            <a href="index.html" class="logo">
+               <span class="logo-bracket">&lt;/&gt;</span>
+               <span class="logo-name">DevRaq</span>
+            </a>
+            <p>Frontend Developer crafting beautiful web experiences with clean code and creative design.</p>
+            <div class="footer-socials">
+               <a href="https://github.com/Mubarak771" target="_blank"><i class="fab fa-github"></i></a>
+               <a href="https://linkedin.com/in/mubarak-abdulsalam-4943a0344" target="_blank"><i
+                     class="fab fa-linkedin-in"></i></a>
+               <a href="mailto:mubarakabdulsalam02@gmail.com"><i class="fas fa-envelope"></i></a>
             </div>
          </div>
+         <div class="footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+               <li><a href="#hero">Home</a></li>
+               <li><a href="#about">About</a></li>
+               <li><a href="#services">Services</a></li>
+               <li><a href="#portfolio">Portfolio</a></li>
+               <li><a href="#skills">Skills</a></li>
+            </ul>
+         </div>
+         <div class="footer-contact">
+            <h4>Contact Info</h4>
+            <ul>
+               <li><i class="fas fa-map-marker-alt"></i> Ibadan, Nigeria</li>
+               <li><i class="fas fa-phone"></i> +2349054803670</li>
+               <li><i class="fas fa-envelope"></i> mubarakabdulsalam02@gmail.com</li>
+            </ul>
+         </div>
       </div>
-   </div>
-   <!-- footer section end -->
-
-   <!-- copyright section start -->
-   <!-- <div class="copyright_section fade-in">
-      <div class="container">
-         <p class="copyright_text">2025 All Rights Reserved. Design by <a
-               href="https://www.linkedin.com/in/mubarak-abdulsalam-4943a0344">Mubarak</a> </p>
+      <div class="footer-bottom">
+         <div class="container">
+            <p>&copy; 2025 Mubarak Abdulsalam. Designed & Built with <i class="fas fa-heart" style="color:#ff4d6d;"></i>
+            </p>
+         </div>
       </div>
-   </div> -->
-   <!-- copyright section end -->
+   </footer>
 
    <script src="script.js"></script>
 </body>
