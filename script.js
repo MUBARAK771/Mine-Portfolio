@@ -10,6 +10,9 @@ window.addEventListener("load", () => {
     setTimeout(() => preloader.remove(), 600);
   }, 900);
 });
+      const date = new Date();
+      const UpDate = document.getElementById('paragraph');
+      UpDate.innerHTML = date.getFullYear();
 
 /* ---- Scroll Progress Bar ---- */
 const scrollProgress = document.getElementById("scroll-progress");
